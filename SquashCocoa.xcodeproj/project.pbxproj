@@ -47,6 +47,15 @@
 		3752CAAD16A6D02000D44697 /* SquashCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88A15AFF5FA007499C7 /* SquashCocoa.m */; };
 		3752CAAE16A6D02000D44697 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22702A0D1695646D0010DD1D /* ISO8601DateFormatter.m */; };
 		3752CAAF16A6D02000D44697 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88D15AFF5FA007499C7 /* Reachability.m */; };
+		3752CAB016A70B1000D44697 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE88C15AFF5FA007499C7 /* Reachability.h */; };
+		3752CAB116A70B1B00D44697 /* ISO8601DateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22702A0C1695646D0010DD1D /* ISO8601DateFormatter.h */; };
+		3752CAB216A70B2100D44697 /* SquashCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE88915AFF5FA007499C7 /* SquashCocoa.h */; };
+		3752CAB316A70B2500D44697 /* SCOccurrence.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE88715AFF5FA007499C7 /* SCOccurrence.h */; };
+		3752CAB416A70B2800D44697 /* SCFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE88515AFF5FA007499C7 /* SCFunctions.h */; };
+		3752CAB516A70B4100D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3752CAA516A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch */; };
+		3752CAB616A70B4200D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3752CAA516A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch */; };
+		3752CAB716A70B4600D44697 /* SquashCocoa-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE86615AFF5C2007499C7 /* SquashCocoa-Prefix.pch */; };
+		3752CAB816A70B4900D44697 /* SquashCocoa i386-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE86515AFF5C2007499C7 /* SquashCocoa i386-Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +243,7 @@
 				22BDE87315AFF5C2007499C7 /* SquashCocoa-Prefix.pch in Headers */,
 				22BDE89B15AFF5FA007499C7 /* Reachability.h in Headers */,
 				22702A0F1695646D0010DD1D /* ISO8601DateFormatter.h in Headers */,
+				3752CAB616A70B4200D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +251,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3752CAB016A70B1000D44697 /* Reachability.h in Headers */,
+				3752CAB116A70B1B00D44697 /* ISO8601DateFormatter.h in Headers */,
+				3752CAB216A70B2100D44697 /* SquashCocoa.h in Headers */,
+				3752CAB316A70B2500D44697 /* SCOccurrence.h in Headers */,
+				3752CAB416A70B2800D44697 /* SCFunctions.h in Headers */,
+				3752CAB516A70B4100D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */,
+				3752CAB716A70B4600D44697 /* SquashCocoa-Prefix.pch in Headers */,
+				3752CAB816A70B4900D44697 /* SquashCocoa i386-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
