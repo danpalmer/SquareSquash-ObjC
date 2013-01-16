@@ -103,8 +103,8 @@ static SquashCocoa *sharedClient = NULL;
         struct sigaction action;
         sigemptyset(&action.sa_mask);
         action.sa_handler = SCHandleSignal;
-        if (sigaction(sig, &action, NULL))
-            NSLog(@"[SquashCocoa] Could not register %s signal handler", strsignal(sig));
+        if (sigaction((int)sig, &action, NULL))
+            NSLog(@"[SquashCocoa] Could not register %s signal handler", strsignal((int)sig));
     }
 }
 
@@ -118,7 +118,7 @@ static SquashCocoa *sharedClient = NULL;
         struct sigaction action;
         sigemptyset(&action.sa_mask);
         action.sa_handler = SIG_DFL;
-        sigaction(sig, &action, NULL);
+        sigaction((int)sig, &action, NULL);
     }
 }
 
