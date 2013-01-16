@@ -14,8 +14,14 @@
 
 #import "SCOccurrence.h"
 
-static NSDictionary *batteryStates;
-static NSDictionary *orientations;
+#if TARGET_OS_MAC
+	#import <sys/sysctl.h>
+#endif
+
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+	static NSDictionary *batteryStates;
+	static NSDictionary *orientations;
+#endif
 
 @interface SCOccurrenceLocationDelegate : NSObject <CLLocationManagerDelegate>
 
@@ -86,6 +92,7 @@ static NSDictionary *orientations;
 #pragma mark Initializers
 
 + (void) initialize {
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     batteryStates = [NSDictionary dictionaryWithObjectsAndKeys:
                                           @"UIDeviceBatteryStateUnknown", [NSNumber numberWithInt:UIDeviceBatteryStateUnknown],
                                           @"UIDeviceBatteryStateUnplugged", [NSNumber numberWithInt:UIDeviceBatteryStateUnplugged],
@@ -101,6 +108,7 @@ static NSDictionary *orientations;
                                          @"UIDeviceOrientationFaceUp", [NSNumber numberWithInt:UIDeviceOrientationFaceUp],
                                          @"UIDeviceOrientationFaceDown", [NSNumber numberWithInt:UIDeviceOrientationFaceDown],
                                          NULL];
+#endif
 }
 
 - (id) initWithException:(NSException *)exception {
@@ -269,10 +277,27 @@ static NSDictionary *orientations;
         self.operatingSystem = [info operatingSystemVersionString];
         self.physicalMemory = [NSNumber numberWithLongLong:[info physicalMemory]];
         
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
         UIDevice *device = [UIDevice currentDevice];
         self.powerState = [batteryStates objectForKey:[NSNumber numberWithInt:device.batteryState]];
         self.deviceType = device.model;
         self.orientation = [orientations objectForKey:[NSNumber numberWithInt:device.orientation]];
+#elif TARGET_OS_MAC
+		self.powerState = @"";
+		
+		size_t len = 0;
+		sysctlbyname("hw.model", NULL, &len, NULL, 0);
+		if (len) {
+			char *model = malloc(len * sizeof(char));
+			sysctlbyname("hw.model", model, &len, NULL, 0);
+			self.deviceType = [NSString stringWithUTF8String:model];
+			free(model);
+		} else {
+			self.deviceType = @"";
+		}
+		
+		self.orientation = @"";
+#endif
         
         self.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         self.build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
@@ -283,7 +308,9 @@ static NSDictionary *orientations;
             delegate.occurrence = self;
             locationManager.delegate = [delegate autorelease];
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
             [locationManager startUpdatingHeading];
+#endif
             [locationManager startUpdatingLocation];
             [locationManager autorelease];
         }
@@ -376,7 +403,9 @@ static NSDictionary *orientations;
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     [manager stopUpdatingHeading];
+#endif
     occurrence.lat = [NSNumber numberWithDouble:newLocation.coordinate.latitude];
     occurrence.lon = [NSNumber numberWithDouble:newLocation.coordinate.longitude];
     occurrence.altitude = [NSNumber numberWithDouble:newLocation.altitude];

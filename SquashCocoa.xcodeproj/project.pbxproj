@@ -39,6 +39,14 @@
 		22BDE89B15AFF5FA007499C7 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDE88C15AFF5FA007499C7 /* Reachability.h */; };
 		22BDE89C15AFF5FA007499C7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88D15AFF5FA007499C7 /* Reachability.m */; };
 		22BDE89D15AFF5FA007499C7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88D15AFF5FA007499C7 /* Reachability.m */; };
+		3752CAA616A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3752CAA516A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch */; };
+		3752CAA816A6D00900D44697 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752CAA716A6D00900D44697 /* CoreLocation.framework */; };
+		3752CAAA16A6D01100D44697 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752CAA916A6D01100D44697 /* Cocoa.framework */; };
+		3752CAAB16A6D02000D44697 /* SCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88615AFF5FA007499C7 /* SCFunctions.m */; };
+		3752CAAC16A6D02000D44697 /* SCOccurrence.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88815AFF5FA007499C7 /* SCOccurrence.m */; };
+		3752CAAD16A6D02000D44697 /* SquashCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88A15AFF5FA007499C7 /* SquashCocoa.m */; };
+		3752CAAE16A6D02000D44697 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22702A0D1695646D0010DD1D /* ISO8601DateFormatter.m */; };
+		3752CAAF16A6D02000D44697 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDE88D15AFF5FA007499C7 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +71,13 @@
 		22BDE8A215AFF71A007499C7 /* Doxyfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Doxyfile; sourceTree = "<group>"; };
 		22BDE8A315AFF71A007499C7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22BDE8A715B0060C007499C7 /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = README.h; path = Source/README.h; sourceTree = "<group>"; };
+		3752CA8916A6CF2200D44697 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3752CA8A16A6CF2200D44697 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3752CA8B16A6CF2200D44697 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3752CA9A16A6CF8E00D44697 /* libSquashCocoa-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSquashCocoa-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3752CAA516A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SquashCocoa-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		3752CAA716A6D00900D44697 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		3752CAA916A6D01100D44697 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3752CA9716A6CF8E00D44697 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3752CAAA16A6D01100D44697 /* Cocoa.framework in Frameworks */,
+				3752CAA816A6D00900D44697 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,6 +131,7 @@
 			children = (
 				2206CA1F158C032D00A1E65A /* libSquashCocoa.a */,
 				2285AF8B159133500076AADC /* libSquashCocoa i386.a */,
+				3752CA9A16A6CF8E00D44697 /* libSquashCocoa-OSX.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,10 +139,13 @@
 		2206CA21158C032D00A1E65A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3752CAA916A6D01100D44697 /* Cocoa.framework */,
+				3752CAA716A6D00900D44697 /* CoreLocation.framework */,
 				225D96BF15A2B41900133932 /* SystemConfiguration.framework */,
 				2285AFA615914C4F0076AADC /* CoreLocation.framework */,
 				2285AFA3159149020076AADC /* UIKit.framework */,
 				2206CA22158C032D00A1E65A /* Foundation.framework */,
+				3752CA8816A6CF2200D44697 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +155,7 @@
 			children = (
 				22BDE86515AFF5C2007499C7 /* SquashCocoa i386-Prefix.pch */,
 				22BDE86615AFF5C2007499C7 /* SquashCocoa-Prefix.pch */,
+				3752CAA516A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch */,
 			);
 			path = "Precompiled Headers";
 			sourceTree = "<group>";
@@ -166,6 +195,16 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		3752CA8816A6CF2200D44697 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3752CA8916A6CF2200D44697 /* AppKit.framework */,
+				3752CA8A16A6CF2200D44697 /* CoreData.framework */,
+				3752CA8B16A6CF2200D44697 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -180,6 +219,7 @@
 				22BDE87215AFF5C2007499C7 /* SquashCocoa-Prefix.pch in Headers */,
 				22BDE89A15AFF5FA007499C7 /* Reachability.h in Headers */,
 				22702A0E1695646D0010DD1D /* ISO8601DateFormatter.h in Headers */,
+				3752CAA616A6CFB100D44697 /* SquashCocoa-OSX-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +234,13 @@
 				22BDE87315AFF5C2007499C7 /* SquashCocoa-Prefix.pch in Headers */,
 				22BDE89B15AFF5FA007499C7 /* Reachability.h in Headers */,
 				22702A0F1695646D0010DD1D /* ISO8601DateFormatter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3752CA9816A6CF8E00D44697 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +279,23 @@
 			name = "SquashCocoa i386";
 			productName = "SquashClient i386";
 			productReference = 2285AF8B159133500076AADC /* libSquashCocoa i386.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3752CA9916A6CF8E00D44697 /* SquashCocoa-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3752CAA216A6CF8E00D44697 /* Build configuration list for PBXNativeTarget "SquashCocoa-OSX" */;
+			buildPhases = (
+				3752CA9616A6CF8E00D44697 /* Sources */,
+				3752CA9716A6CF8E00D44697 /* Frameworks */,
+				3752CA9816A6CF8E00D44697 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SquashCocoa-OSX";
+			productName = "SquashCocoa-OSX";
+			productReference = 3752CA9A16A6CF8E00D44697 /* libSquashCocoa-OSX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -274,6 +338,7 @@
 			targets = (
 				2206CA1E158C032D00A1E65A /* SquashCocoa */,
 				2285AF8A159133500076AADC /* SquashCocoa i386 */,
+				3752CA9916A6CF8E00D44697 /* SquashCocoa-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -300,6 +365,18 @@
 				22BDE89915AFF5FA007499C7 /* SquashCocoa.m in Sources */,
 				22BDE89D15AFF5FA007499C7 /* Reachability.m in Sources */,
 				22702A111695646D0010DD1D /* ISO8601DateFormatter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3752CA9616A6CF8E00D44697 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3752CAAB16A6D02000D44697 /* SCFunctions.m in Sources */,
+				3752CAAC16A6D02000D44697 /* SCOccurrence.m in Sources */,
+				3752CAAD16A6D02000D44697 /* SquashCocoa.m in Sources */,
+				3752CAAE16A6D02000D44697 /* ISO8601DateFormatter.m in Sources */,
+				3752CAAF16A6D02000D44697 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +481,56 @@
 			};
 			name = Release;
 		};
+		3752CAA316A6CF8E00D44697 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Precompiled Headers/SquashCocoa-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		3752CAA416A6CF8E00D44697 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Precompiled Headers/SquashCocoa-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,6 +560,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3752CAA216A6CF8E00D44697 /* Build configuration list for PBXNativeTarget "SquashCocoa-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3752CAA316A6CF8E00D44697 /* Debug */,
+				3752CAA416A6CF8E00D44697 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
