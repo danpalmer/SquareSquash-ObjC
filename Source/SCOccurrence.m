@@ -396,16 +396,16 @@
 
 #pragma mark SCLocationDelegate (implemented)
 
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 - (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
-    [manager stopUpdatingLocation];
+    [manager stopUpdatingHeading];
     occurrence.heading = [NSNumber numberWithDouble:[newHeading trueHeading]];
     [occurrence didReceiveNewData];
 }
+#endif
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-    [manager stopUpdatingHeading];
-#endif
+	[manager stopUpdatingLocation];
     occurrence.lat = [NSNumber numberWithDouble:newLocation.coordinate.latitude];
     occurrence.lon = [NSNumber numberWithDouble:newLocation.coordinate.longitude];
     occurrence.altitude = [NSNumber numberWithDouble:newLocation.altitude];
