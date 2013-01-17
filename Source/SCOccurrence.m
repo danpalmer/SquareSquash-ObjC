@@ -283,8 +283,6 @@
         self.deviceType = device.model;
         self.orientation = [orientations objectForKey:[NSNumber numberWithInt:device.orientation]];
 #elif TARGET_OS_MAC
-		self.powerState = @"";
-		
 		size_t len = 0;
 		sysctlbyname("hw.model", NULL, &len, NULL, 0);
 		if (len) {
@@ -295,8 +293,6 @@
 		} else {
 			self.deviceType = @"";
 		}
-		
-		self.orientation = @"";
 #endif
         
         self.version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
