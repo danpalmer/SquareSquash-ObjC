@@ -28,7 +28,18 @@
  Squash if the host is available. Occurrences are not removed from this file
  queue until Squash successfully receives them.
  */
-@interface SquashCocoa : NSObject
+@interface SquashCocoa : NSObject {
+    BOOL disabled;
+    NSString *APIKey;
+    NSString *environment;
+    NSString *host;
+    NSString *notifyPath;
+    NSUInteger timeout;
+    NSMutableSet *ignoredExceptions;
+    NSMutableSet *handledSignals;
+    NSMutableSet *filterUserInfoKeys;
+    NSString *revision;
+}
 
 #pragma mark Properties
 

@@ -23,7 +23,9 @@
 	static NSDictionary *orientations;
 #endif
 
-@interface SCOccurrenceLocationDelegate : NSObject <CLLocationManagerDelegate>
+@interface SCOccurrenceLocationDelegate : NSObject <CLLocationManagerDelegate> {
+    SCOccurrence *occurrence;
+}
 
 @property (retain) SCOccurrence *occurrence;
 
