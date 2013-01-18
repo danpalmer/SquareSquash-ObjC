@@ -25,7 +25,38 @@
  All initialized exceptions automatically load environment information when
  created. The developer need only supply the exception-specific information.
  */
-@interface SCOccurrence : NSObject <NSCoding>
+@interface SCOccurrence : NSObject <NSCoding> {
+    NSString *UUID;
+    NSString *symbolicationID;
+    NSString *revision;
+    NSDate *occurredAt;
+    NSString *client;
+    NSString *exceptionClassName;
+    NSString *message;
+    NSArray *backtraces;
+    NSDictionary *userData;
+    NSArray *parentExceptions;
+    NSDictionary *envVars;
+    NSArray *arguments;
+    NSString *hostname;
+    NSString *version;
+    NSString *build;
+    NSString *deviceID;
+    NSString *deviceType;
+    NSString *operatingSystem;
+    NSNumber *physicalMemory;
+    NSString *powerState;
+    NSString *orientation;
+    NSNumber *lat;
+    NSNumber *lon;
+    NSNumber *altitude;
+    NSNumber *locationPrecision;
+    NSNumber *heading;
+    NSNumber *speed;
+    NSString *networkOperator;
+    NSString *networkType;
+    NSString *connectivity;
+}
 
 #pragma mark Properties
 
